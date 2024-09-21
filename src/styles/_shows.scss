@@ -1,0 +1,57 @@
+@use 'variaveis';
+@use 'sass:color';
+
+.shows {
+    padding: 2vw 5.6vw;
+    min-height: 50vw;
+
+    &__list {
+        margin-top: 44px;
+        display: none;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 24px;
+        transition: ease 0.5s;
+
+        &--is-active {
+            display: grid;
+        }
+
+        &__item{
+            img {
+                max-width: 100%;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        justify-content: center;
+
+        &__button {
+            color: variaveis.$corDetextoSecundario;
+            font-size: 20px;
+            border: none;
+            border-bottom: 5px solid variaveis.$corDeFundo;
+            padding-bottom: 5px;
+            background: none;
+            text-transform: uppercase;
+            margin: 0 1vw;
+            transition: ease 0.5s;
+            cursor: pointer;
+            
+            &:hover {
+                border-bottom: 5px solid color.scale(variaveis.$corDetextoSecundario, $lightness: -75%);
+            }
+
+            &--is-active {
+                border-bottom: 5px solid variaveis.$corDetextoSecundario;
+                cursor: default;
+
+                &:hover {
+                    border-bottom: 5px solid variaveis.$corDetextoSecundario;
+                }
+            }
+        }
+    }
+}
