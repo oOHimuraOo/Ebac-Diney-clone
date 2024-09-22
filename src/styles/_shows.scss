@@ -12,6 +12,10 @@
         gap: 24px;
         transition: ease 0.5s;
 
+        @media (max-width:768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
         &--is-active {
             display: grid;
         }
@@ -27,6 +31,12 @@
     &__tabs {
         display: flex;
         justify-content: center;
+
+        @media (max-width:768px) {
+            white-space: nowrap;
+            overflow-x: scroll;
+            padding-left: 20px;
+        }
 
         &__button {
             color: variaveis.$corDetextoSecundario;
@@ -51,6 +61,10 @@
                 &:hover {
                     border-bottom: 5px solid variaveis.$corDetextoSecundario;
                 }
+            }
+
+            @media (max-width:768px) {
+                font-size: 16px;
             }
         }
     }
