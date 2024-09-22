@@ -5,6 +5,8 @@
 @use 'sass:color';
 @use 'avaible-devices';
 @use 'faq';
+@use 'footer';
+@use 'header';
 
 @font-face {
     font-family: "Avenir";
@@ -71,22 +73,45 @@ body {
 }
 
 .button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 60px;
     font-size: 18px;
     color: variaveis.$corDetextoSecundario;
-    background-color: variaveis.$corBotao;
+    background-color: variaveis.$corBotaoPrimario;
     text-transform: uppercase;
     border-radius: 4px;
-    margin-top: 2vw;
-    margin-bottom: 8px;
     border: none;
     transition: ease 0.5s;
     cursor: pointer;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+    border: 1px solid variaveis.$corBotaoPrimario;
 
     &:hover {
-        background-color: color.scale(variaveis.$corBotao, $lightness: -25%);
+        background-color: color.scale(variaveis.$corBotaoPrimario, $lightness: -25%);
+    }
+
+    &--secundary {
+        background-color: variaveis.$corBotaoSecundario;
+        border-color: variaveis.$corBotaoSecundario;
+
+        &:hover {
+            background-color: color.scale(variaveis.$corBotaoSecundario, $lightness: -25%);
+        }
+    }
+
+    &--dark {
+        background-color: variaveis.$corBotaoDark;
+        border-color: variaveis.$corBotaoDarkHover;
+
+        &:hover {
+            background-color: variaveis.$corBotaoDarkHover;
+            color: variaveis.$corDeFundo;
+        }
     }
 }
 
